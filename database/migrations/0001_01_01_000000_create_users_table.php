@@ -9,7 +9,7 @@ return new class extends Migration
     /**
      * Run the migrations.
      */
-   public function up(): void
+    public function up(): void
     {
         Schema::create('users', function (Blueprint $table) {
             $table->id();
@@ -17,7 +17,7 @@ return new class extends Migration
             $table->string('email')->unique();
             $table->timestamp('email_verified_at')->nullable();
             $table->string('password');
-            
+
             // --- ABAC ATTRIBUTES ADDED HERE ---
             $table->string('department')->default('general'); // e.g., management, store_staff, customer
             $table->unsignedBigInteger('store_id')->default(1); // Store context for multi-store routing

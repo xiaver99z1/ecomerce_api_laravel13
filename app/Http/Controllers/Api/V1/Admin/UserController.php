@@ -24,7 +24,7 @@ class UserController extends Controller
             'meta' => [
                 'current_page' => $users->currentPage(),
                 'last_page' => $users->lastPage(),
-            ]
+            ],
         ]);
     }
 

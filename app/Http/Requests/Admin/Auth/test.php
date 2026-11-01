@@ -3,9 +3,9 @@
 function hello($name)
 {
     if ($name) {
-        echo "Hello ".$name;
+        echo 'Hello '.$name;
     } else {
-        echo "Hello World";
+        echo 'Hello World';
     }
 }
-hello("John");
+hello('John');
