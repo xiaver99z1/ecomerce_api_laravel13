@@ -30,7 +30,50 @@ class UserFactory extends Factory
             'email_verified_at' => now(),
             'password' => static::$password ??= Hash::make('password'),
             'remember_token' => Str::random(10),
+            'department' => 'general',
+            'store_id' => 1,
+            'is_super_admin' => false,
         ];
+    }
+
+    /**
+     * Indicate that the user is a super admin.
+     */
+    public function superAdmin(): static
+    {
+        return $this->state(fn (array $attributes) => [
+            'is_super_admin' => true,
+        ]);
+    }
+
+    /**
+     * Indicate that the user belongs to management department.
+     */
+    public function management(): static
+    {
+        return $this->state(fn (array $attributes) => [
+            'department' => 'management',
+        ]);
+    }
+
+    /**
+     * Set a specific department.
+     */
+    public function department(string $department): static
+    {
+        return $this->state(fn (array $attributes) => [
+            'department' => $department,
+        ]);
+    }
+
+    /**
+     * Set a specific store.
+     */
+    public function forStore(int $storeId): static
+    {
+        return $this->state(fn (array $attributes) => [
+            'store_id' => $storeId,
+        ]);
     }
 
     /**
