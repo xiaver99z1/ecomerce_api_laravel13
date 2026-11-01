@@ -10,6 +10,15 @@ use Illuminate\Http\Request;
 
 class UserController extends Controller
 {
+    /**
+     * Display a paginated listing of users for administrators or management.
+     */
+    /**
+     * Display a paginated listing of users for administrators or management.
+     *
+     * @param  Request  $request
+     * @return JsonResponse
+     */
     public function index(Request $request): JsonResponse
     {
         // Simple ABAC check: only super admins or management can list users
@@ -28,6 +37,16 @@ class UserController extends Controller
         ]);
     }
 
+    /**
+     * Update the ABAC attributes and role flags for the specified target user.
+     */
+    /**
+     * Update the ABAC attributes and role flags for the specified target user.
+     *
+     * @param  Request  $request
+     * @param  User  $targetUser
+     * @return JsonResponse
+     */
     public function updateAttributes(Request $request, User $targetUser): JsonResponse
     {
         if (! $request->user()->is_super_admin) {

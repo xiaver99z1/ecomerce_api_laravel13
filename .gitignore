@@ -5,8 +5,11 @@
 .env.production
 .phpactor.json
 .phpunit.result.cache
+/.agents/
+/.claude/
 /.codex
 /.cursor/
+/.gemini/
 /.idea
 /.nova
 /.phpunit.cache
@@ -25,3 +28,5 @@ _ide_helper.php
 Homestead.json
 Homestead.yaml
 Thumbs.db
+tests/Browser/Screenshots/
+tests/Browser/Console/

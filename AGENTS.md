@@ -5,7 +5,7 @@
 
 ## Foundational Context
 
-This application is a Laravel application running on PHP 8.5. Always use the APIs that match the installed major version of each package — do not assume a version.
+This application is a Laravel application running in an environment with PHP 8.5, but it supports PHP ^8.3 as declared in `composer.json`. All code must remain compatible with PHP ^8.3 (avoid PHP 8.4/8.5-only syntax such as `|>`). Always use the APIs that match the installed major version of each package — do not assume a version.
 
 Before relying on a package's API, confirm its installed version:
 - PHP packages: run `composer show --direct` to list direct dependencies with versions, or `composer show <vendor/package>` for a single package.

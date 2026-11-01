@@ -18,6 +18,8 @@ class AuthController extends Controller
 {
     /**
      * Attempt authentication for user/admin.
+     *
+     * @throws ValidationException
      */
     public function authenticate(LoginRequest $request): JsonResponse
     {
@@ -46,7 +48,7 @@ class AuthController extends Controller
     }
 
     /**
-     * Show Authenticated User
+     * Show Authenticated User.
      *
      * @group [Admin] User Mgmt
      */

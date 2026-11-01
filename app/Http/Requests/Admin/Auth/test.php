@@ -1,5 +1,11 @@
 <?php
 
+/**
+ * Greet the specified name or fallback to world.
+ *
+ * @param  string|null  $name
+ * @return void
+ */
 function hello($name)
 {
     if ($name) {
